@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "Koledeus.Contract";
+
+package cpu;
+
+service Cpu {
+  rpc FeedCPUInfo (stream CPUInfoRequest) returns (CPUInfoReply);
+}
+
+message CPUInfoRequest {
+  double cpuPercentage = 1;
+}
+
+message CPUInfoReply {
+  bool isSuccess = 1;
+}
