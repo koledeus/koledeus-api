@@ -46,9 +46,9 @@ namespace Koledeus.API
             {
                 var dbContext = scopeContext.ServiceProvider.GetRequiredService<KoledeusDbContext>();
 
-                dbContext.Database.EnsureCreated();
+                dbContext.Database.Migrate();
             }
-            
+
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
