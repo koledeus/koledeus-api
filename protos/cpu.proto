@@ -10,6 +10,7 @@ service Cpu {
 
 message CPUInfoRequest {
   double cpuPercentage = 1;
+  int64 memoryUsage = 2;
 }
 
 message CPUInfoReply {

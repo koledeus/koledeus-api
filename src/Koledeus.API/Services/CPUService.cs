@@ -27,7 +27,8 @@ namespace Koledeus.API.Services
                 await _dbContext.ClientMetrics.AddAsync(new ClientMetricEntity()
                 {
                     Id = Guid.NewGuid(),
-                    Cpu = requestStream.Current.CpuPercentage
+                    Cpu = requestStream.Current.CpuPercentage,
+                    MemoryUsage = requestStream.Current.MemoryUsage
                 });
                 _logger.LogInformation($"CPU Info: {requestStream.Current.CpuPercentage}");
             }
